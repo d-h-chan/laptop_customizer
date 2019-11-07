@@ -1,19 +1,10 @@
 import React, { Component } from 'react';
 import slugify from 'slugify';
+import USCurrencyFormat from './USCurrencyFormat'
 
-// This object will allow us to
-// easily convert numbers into US dollar values
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD'
-  });
-  
+
 class Feature extends Component {
-    /*render() {
-        return (
-            <h1></h1>
-        )
-    }*/
+
     render() {
         const {feature, idx} = this.props;
         const featureHash = feature + '-' + idx;
@@ -26,7 +17,7 @@ class Feature extends Component {
                         id={itemHash}
                         className="feature__option"
                         name={slugify(feature)}
-                        checked={item.name === this.props.selected[feature].name}
+                        checked={item.name === this.props.selected.name}
                         onChange={e => this.props.updateFeature(feature, item)}
                     />
                     <label htmlFor={itemHash} className="feature__label">

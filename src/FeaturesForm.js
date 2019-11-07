@@ -10,7 +10,7 @@ class FeaturesForm extends Component {
           feature={feature}
           idx={idx}
           options={this.props.features[feature]}
-          selected={this.props.selected}
+          selected={this.props.selected[feature]}
           updateFeature={this.props.updateFeature} />
       );
     });
